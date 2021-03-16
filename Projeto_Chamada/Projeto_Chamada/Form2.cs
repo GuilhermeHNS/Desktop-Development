@@ -15,9 +15,22 @@ namespace Projeto_Chamada
 {
     public partial class Form2 : Form
     {
+
+        MySqlConnection con;
         public Form2()
         {
             InitializeComponent();
+            try
+            {
+                con = new MySqlConnection("server=143.106.241.3; port=3306; UserID=cl19239; database=cl19239; password=cl*12052002");
+
+            }
+            catch
+            {
+                MessageBox.Show("Falha na conexão");
+            }
+
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -27,25 +40,13 @@ namespace Projeto_Chamada
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            /*try
-            {
-                MySqlConnection con = new MySqlConnection("server=143.106.241.3; port=3306; UserID=cl19239; database=cl19239; password=cl*12052002");
-                con.Open();
-                MessageBox.Show("Conectado");
-                con.Close();
 
-            }
-            catch
-            {
-                MessageBox.Show("Falha");
-            } */
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                MySqlConnection con = new MySqlConnection("server=143.106.241.3; port=3306; UserID=cl19239; database=cl19239; password=cl*12052002");
                 con.Open();
                 MessageBox.Show("Conectado");
 
@@ -58,6 +59,10 @@ namespace Projeto_Chamada
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
             }
         }
 

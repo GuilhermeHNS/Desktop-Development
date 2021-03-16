@@ -32,6 +32,7 @@ namespace Projeto_Chamada
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrarPalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,8 @@ namespace Projeto_Chamada
             // arquivoToolStripMenuItem
             // 
             this.arquivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrarAlunosToolStripMenuItem});
+            this.cadastrarAlunosToolStripMenuItem,
+            this.cadastrarPalestrasToolStripMenuItem});
             this.arquivoToolStripMenuItem.Name = "arquivoToolStripMenuItem";
             this.arquivoToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.arquivoToolStripMenuItem.Text = "Arquivo";
@@ -57,9 +59,16 @@ namespace Projeto_Chamada
             // cadastrarAlunosToolStripMenuItem
             // 
             this.cadastrarAlunosToolStripMenuItem.Name = "cadastrarAlunosToolStripMenuItem";
-            this.cadastrarAlunosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.cadastrarAlunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cadastrarAlunosToolStripMenuItem.Text = "Cadastrar Alunos";
             this.cadastrarAlunosToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunosToolStripMenuItem_Click);
+            // 
+            // cadastrarPalestrasToolStripMenuItem
+            // 
+            this.cadastrarPalestrasToolStripMenuItem.Name = "cadastrarPalestrasToolStripMenuItem";
+            this.cadastrarPalestrasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarPalestrasToolStripMenuItem.Text = "Cadastrar Palestras";
+            this.cadastrarPalestrasToolStripMenuItem.Click += new System.EventHandler(this.cadastrarPalestrasToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -85,6 +94,7 @@ namespace Projeto_Chamada
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarAlunosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrarPalestrasToolStripMenuItem;
     }
 }
 

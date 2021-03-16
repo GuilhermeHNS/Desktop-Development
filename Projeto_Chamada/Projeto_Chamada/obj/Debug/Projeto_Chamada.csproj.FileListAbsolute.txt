@@ -25,3 +25,4 @@ C:\Users\guilh\OneDrive\Documentos\COTIL-DESKTOP-E08AGEF\3INFN\TECNICO\DAD\Deskt
 C:\Users\guilh\OneDrive\Documentos\COTIL-DESKTOP-E08AGEF\3INFN\TECNICO\DAD\Desktop-Development\Projeto_Chamada\Projeto_Chamada\bin\Debug\MySql.Data.xml
 C:\Users\guilh\OneDrive\Documentos\COTIL-DESKTOP-E08AGEF\3INFN\TECNICO\DAD\Desktop-Development\Projeto_Chamada\Projeto_Chamada\obj\Debug\Projeto_Chamada.exe.config
 C:\Users\guilh\OneDrive\Documentos\COTIL-DESKTOP-E08AGEF\3INFN\TECNICO\DAD\Desktop-Development\Projeto_Chamada\Projeto_Chamada\obj\Debug\Projeto_Chamada.csproj.CopyComplete
+C:\Users\guilh\OneDrive\Documentos\COTIL-DESKTOP-E08AGEF\3INFN\TECNICO\DAD\Desktop-Development\Projeto_Chamada\Projeto_Chamada\obj\Debug\Projeto_Chamada.Form3.resources

@@ -42,5 +42,14 @@ namespace Projeto_Chamada
         {
 
         }
+
+        private void cadastrarPalestrasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(Application.OpenForms.OfType<Form3>().Count() == 0){
+                Form3 filho3 = new Form3();
+                filho3.MdiParent = this;
+                filho3.Show();
+            }
+        }
     }
 }
