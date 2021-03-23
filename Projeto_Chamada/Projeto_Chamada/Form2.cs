@@ -48,13 +48,9 @@ namespace Projeto_Chamada
             try
             {
                 con.Open();
-                MessageBox.Show("Conectado");
-
-
                 MySqlCommand insere = new MySqlCommand("INSERT INTO `cl19239`.`Alunos_C#`(idAlunos, nomeAlunos, turmaAlunos, emailAlunos) values (" + textBox1.Text + ", '" + textBox2.Text + " ',' " + comboBox1.SelectedItem.ToString() + " ','"+textBox3.Text+"')", con);
                 insere.ExecuteNonQuery();
                 MessageBox.Show("Gravação realizada com sucesso");
-                con.Close();
             }
             catch (Exception ex)
             {
@@ -66,5 +62,9 @@ namespace Projeto_Chamada
             }
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -51,5 +51,20 @@ namespace Projeto_Chamada
                 filho3.Show();
             }
         }
+
+        private void presençaDosAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frequenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<Form4>().Count() == 0)
+            {
+                Form4 filho4 = new Form4();
+                filho4.MdiParent = this;
+                filho4.Show();
+            }
+        }
     }
 }

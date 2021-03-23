@@ -65,10 +65,13 @@ namespace Projeto_Chamada
             // 
             // monthCalendar1
             // 
+            this.monthCalendar1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.monthCalendar1.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.monthCalendar1.Location = new System.Drawing.Point(62, 67);
+            this.monthCalendar1.MaxSelectionCount = 1;
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 2;
-            this.monthCalendar1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.monthCalendar1_MouseDown);
+            this.monthCalendar1.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateSelected);
             // 
             // label2
             // 
@@ -153,6 +156,7 @@ namespace Projeto_Chamada
             this.button1.TabIndex = 11;
             this.button1.Text = "Gravar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form3
             // 

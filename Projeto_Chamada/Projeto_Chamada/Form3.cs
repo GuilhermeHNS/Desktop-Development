@@ -17,7 +17,6 @@ namespace Projeto_Chamada
         MySqlConnection con;
         public Form3()
         {
-            InitializeComponent();
 
             InitializeComponent();
             try
@@ -38,10 +37,28 @@ namespace Projeto_Chamada
 
         }
 
-
-        private void monthCalendar1_MouseDown(object sender, MouseEventArgs e)
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
-            textBox1.Text = monthCalendar1.SelectionRange.Start.ToString("dd/MM/yyyy");
+            textBox1.Text = monthCalendar1.SelectionStart.ToString("dd/MM/yyyy");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                con.Open();
+                MySqlCommand insere = new MySqlCommand("INSERT INTO `cl19239`.`Palestras`(tituloPalestra, nomePalestrante, diaPalestra, horaPalestra)values('"+ textBox2.Text + "','"+ textBox3.Text + "','" + textBox1.Text + "','" + comboBox1.Text + "')",con);
+                insere.ExecuteNonQuery();
+                MessageBox.Show("Cadastrado!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }

@@ -33,13 +33,15 @@ namespace Projeto_Chamada
             this.arquivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarAlunosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrarPalestrasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.frequenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.arquivoToolStripMenuItem});
+            this.arquivoToolStripMenuItem,
+            this.frequenciaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -59,16 +61,23 @@ namespace Projeto_Chamada
             // cadastrarAlunosToolStripMenuItem
             // 
             this.cadastrarAlunosToolStripMenuItem.Name = "cadastrarAlunosToolStripMenuItem";
-            this.cadastrarAlunosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarAlunosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.cadastrarAlunosToolStripMenuItem.Text = "Cadastrar Alunos";
             this.cadastrarAlunosToolStripMenuItem.Click += new System.EventHandler(this.cadastrarAlunosToolStripMenuItem_Click);
             // 
             // cadastrarPalestrasToolStripMenuItem
             // 
             this.cadastrarPalestrasToolStripMenuItem.Name = "cadastrarPalestrasToolStripMenuItem";
-            this.cadastrarPalestrasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cadastrarPalestrasToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.cadastrarPalestrasToolStripMenuItem.Text = "Cadastrar Palestras";
             this.cadastrarPalestrasToolStripMenuItem.Click += new System.EventHandler(this.cadastrarPalestrasToolStripMenuItem_Click);
+            // 
+            // frequenciaToolStripMenuItem
+            // 
+            this.frequenciaToolStripMenuItem.Name = "frequenciaToolStripMenuItem";
+            this.frequenciaToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.frequenciaToolStripMenuItem.Text = "Frequencia";
+            this.frequenciaToolStripMenuItem.Click += new System.EventHandler(this.frequenciaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -95,6 +104,7 @@ namespace Projeto_Chamada
         private System.Windows.Forms.ToolStripMenuItem arquivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarAlunosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastrarPalestrasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem frequenciaToolStripMenuItem;
     }
 }
 
