@@ -48,7 +48,8 @@ namespace Projeto_Chamada
             try
             {
                 con.Open();
-                MySqlCommand insere = new MySqlCommand("INSERT INTO `cl19239`.`Alunos_C#`(idAlunos, nomeAlunos, turmaAlunos, emailAlunos) values (" + textBox1.Text + ", '" + textBox2.Text + " ',' " + comboBox1.SelectedItem.ToString() + " ','"+textBox3.Text+"')", con);
+                MySqlCommand insere = new MySqlCommand("INSERT INTO `cl19239`.`Alunos_CSharp`(idAlunos, nomeAlunos, turmaAlunos, emailAlunos, fotoAlunos) values (" + textBox1.Text + ", '" + textBox2.Text + " ',' " + comboBox1.SelectedItem.ToString() + " ','"+textBox3.Text+"',@foto)", con);
+                insere.Parameters.AddWithValue("foto", ConverterFotoParaByteArray());
                 insere.ExecuteNonQuery();
                 MessageBox.Show("Gravação realizada com sucesso");
             }
@@ -62,9 +63,53 @@ namespace Projeto_Chamada
             }
         }
 
+        private byte[] ConverterFotoParaByteArray()
+        {
+            using (var stream = new System.IO.MemoryStream())
+            {
+                pictureBox2.BackgroundImage.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
+                stream.Seek(0, System.IO.SeekOrigin.Begin);
+                byte[] bArray = new byte[stream.Length];
+                stream.Read(bArray, 0, System.Convert.ToInt32(stream.Length));
+                return bArray;
+            }
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            dialog.Title = "Abrir Foto";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    pictureBox2.BackgroundImage = new Bitmap(dialog.OpenFile());
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Não foi possivel carregar a foto: " + ex.Message);
+                }
+            }
+            dialog.Dispose();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,12 +62,26 @@ namespace Projeto_Chamada
                 try
                 {
                     con.Open();
-                    MySqlCommand busca_ra = new MySqlCommand("Select nomeAlunos, idAlunos from Alunos_CSharp where idAlunos=" + textBox1.Text, con);
+                    MySqlCommand busca_ra = new MySqlCommand("Select nomeAlunos, idAlunos, fotoAlunos from Alunos_CSharp where idAlunos=" + textBox1.Text, con);
                     MySqlDataReader resultado = busca_ra.ExecuteReader();
                     if (resultado.Read())
                     {
                         label4.Text = resultado["nomeAlunos"].ToString();
                         ra = Convert.ToInt32(resultado["idAlunos"].ToString());
+                        try
+                        {
+                            string imagem = Convert.ToString(DateTime.Now.ToFileTime());
+                            byte[] bimage = (byte[])resultado["fotoAlunos"];
+                            FileStream fs = new FileStream(imagem, FileMode.CreateNew, FileAccess.Write);
+                            fs.Write(bimage, 0, bimage.Length - 1);
+                            fs.Close();
+                            pictureBox2.BackgroundImage = Image.FromFile(imagem);
+                            resultado.Close();
+                        }
+                        catch
+                        {
+                            pictureBox2.BackgroundImage = Image.FromFile("perdemo.jpg");
+                        }
                         //inserir
                         con.Close();
                         try
