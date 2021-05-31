@@ -66,5 +66,25 @@ namespace Projeto_Chamada
                 filho4.Show();
             }
         }
+
+        private void excluirAtualizarAlunosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<Form5>().Count() == 0)
+            {
+                Form5 filho5 = new Form5();
+                filho5.MdiParent = this;
+                filho5.Show();
+            }
+        }
+
+        private void relatórioDePresençaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<Form6>().Count() == 0)
+            {
+                Form6 filho6 = new Form6();
+                filho6.MdiParent = this;
+                filho6.Show();
+            }
+        }
     }
 }
